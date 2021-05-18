@@ -60,4 +60,7 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:${rootProject.extra["compose_version"]}")
+    implementation ("com.google.accompanist:accompanist-coil:0.9.1")
+    implementation ("androidx.appcompat:appcompat:1.3.0-rc01")
+
 }
