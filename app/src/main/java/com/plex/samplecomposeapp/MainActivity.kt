@@ -12,6 +12,7 @@ import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.Text
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusOrder
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        customComposeViewModel = ViewModelProvider(this)[CustomComposeViewModel::class.java]
         val coordinator = object : InteractionHandler {
             override fun onAction(action: Action) {
                 when(action) {
@@ -32,9 +32,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        customComposeViewModel = ViewModelProvider(this)[CustomComposeViewModel::class.java]
 
         val customComposeView = CustomComposeView(
-            context = applicationContext,
+            context = this,
             rootViewItem = customComposeViewModel.rootViewItem,
             interactionHandler = coordinator
             ) {

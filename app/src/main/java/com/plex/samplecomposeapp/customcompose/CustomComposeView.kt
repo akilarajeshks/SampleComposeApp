@@ -1,5 +1,6 @@
 package com.plex.samplecomposeapp.customcompose
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.view.KeyEvent
@@ -13,6 +14,7 @@ import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.AbstractComposeView
 import com.plex.samplecomposeapp.modifierUtils.whenTV
 
+@SuppressLint("ViewConstructor")
 class CustomComposeView(
     context: Context,
     private val rootViewItem: RootViewItem,

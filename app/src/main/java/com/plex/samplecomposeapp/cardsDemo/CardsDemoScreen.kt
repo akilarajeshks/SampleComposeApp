@@ -17,21 +17,25 @@ fun CardsDemoScreen() {
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
     ) {
-        Column(
-            modifier = Modifier.wrapContentSize(),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Box(modifier = Modifier
-                .height(180.dp)
-                .width(100.dp)) {
-                val card = CardViewItem(
-                    title = "Custom card title",
-                    "Subtitle ",
-                    imageUrl = "https://artworks.thetvdb.com/banners/movies/31/posters/31.jpg"
-                )
-                CardView(cardItem = card)
+        repeat(20) {
+            Column(
+                modifier = Modifier.wrapContentSize(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Box(
+                    modifier = Modifier
+                        .height(180.dp)
+                        .width(100.dp)
+                ) {
+                    val card = CardViewItem(
+                        title = "Custom card title",
+                        "Subtitle ",
+                        imageUrl = "https://artworks.thetvdb.com/banners/movies/31/posters/31.jpg"
+                    )
+                    CardView(cardItem = card)
+                }
+                Text("Card Item")
             }
-            Text("Card Item")
         }
     }
 }

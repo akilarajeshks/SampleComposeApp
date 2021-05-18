@@ -32,12 +32,14 @@ fun SingleColumnTextCell(
         modifier = Modifier
             .width(cellItem.width)
             .height(cellItem.height)
-            .whenTV ({
+            .whenTV({
                 tvFocusChanged(cellItem) {
                     isFocused = it == TVFocusState.Active
                 }
-            },null)
-            .clickable { onSelect() }
+            }, null)
+            .clickable {
+                onSelect()
+            }
             .background(
                 color = if (isFocused) Color.Gray else Color.Black,
                 shape = MaterialTheme.shapes.medium
@@ -46,12 +48,14 @@ fun SingleColumnTextCell(
         horizontalArrangement = Arrangement.Center
     ) {
         Text(
-            modifier = Modifier.whenTV ({
-                tvFocusable(cellItem).handleTVKey(cellItem, ControllerKey.Enter) { onSelect() }
-            },null),
+            modifier = Modifier.whenTV({
+                tvFocusable(cellItem).handleTVKey(cellItem, ControllerKey.Enter) {
+                    onSelect()
+                }
+            }, null),
             text = cellItem.title,
             style = MaterialTheme.typography.caption,
-            color = if (isFocused) Color.Gray else colors.primary
+            color = if (isFocused) Color.Black else colors.primary
         )
     }
 }

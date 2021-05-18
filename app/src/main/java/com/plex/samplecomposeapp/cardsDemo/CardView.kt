@@ -26,7 +26,7 @@ fun CardView(cardItem: CardViewItem, modifier: Modifier = Modifier) {
     ).value
 
     val currentFocus = LocalCurrentFocusedItem.current
-    val interactionHandler = LocalInteractionHandler.current
+    val interactionHandler = com.plex.samplecomposeapp.customcompose.LocalInteractionHandler.current
 
     Column(
         modifier = modifier

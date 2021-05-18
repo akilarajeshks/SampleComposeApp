@@ -34,7 +34,7 @@ fun NavigationListScreen(
         }
     }
 
-    val actionHandler = LocalInteractionHandler.current
+    val actionHandler = com.plex.samplecomposeapp.customcompose.LocalInteractionHandler.current
 
     WithContent(customComposeViewModel.rootViewItem, data) {
         if (isTVDevice()) {
@@ -47,7 +47,12 @@ fun NavigationListScreen(
                 items(data.children.count()) {
                     val item = data.children[it]
                     SingleColumnTextCell(item,
-                        onSelect = { actionHandler.onAction(OptionViewAction(item)) })
+                        onSelect =
+                        {
+
+                            actionHandler.onAction(OptionViewAction(item))
+                        }
+                    )
 
                     if (it == data.focusIndex) {
                         RefocusEffect()
@@ -62,7 +67,11 @@ fun NavigationListScreen(
                 items(data.children.count()) {
                     val item = data.children[it]
                     SingleColumnTextCell(item,
-                        onSelect = { actionHandler.onAction(OptionViewAction(item)) })
+                        onSelect =
+                        {
+                            actionHandler.onAction(OptionViewAction(item))
+                        }
+                    )
                 }
             }
         }
