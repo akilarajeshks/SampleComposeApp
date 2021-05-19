@@ -2,8 +2,7 @@ package com.plex.samplecomposeapp.cardsDemo
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import com.plex.samplecomposeapp.customcompose.LocalRootViewItem
-import com.plex.samplecomposeapp.customcompose.RootViewItem
+ import com.plex.samplecomposeapp.customcompose.RootViewItem
 import com.plex.samplecomposeapp.customcompose.ViewItem
 import com.plex.samplecomposeapp.customcompose.refocus
 

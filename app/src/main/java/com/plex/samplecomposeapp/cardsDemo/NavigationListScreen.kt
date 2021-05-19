@@ -34,7 +34,7 @@ fun NavigationListScreen(
         }
     }
 
-    val actionHandler = com.plex.samplecomposeapp.customcompose.LocalInteractionHandler.current
+    val actionHandler = LocalInteractionHandler.current
 
     WithContent(customComposeViewModel.rootViewItem, data) {
         if (isTVDevice()) {

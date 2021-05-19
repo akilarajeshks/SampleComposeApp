@@ -12,6 +12,8 @@ import androidx.compose.ui.input.key.KeyEventType
 import androidx.compose.ui.input.key.onKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.platform.AbstractComposeView
+import com.plex.samplecomposeapp.cardsDemo.LocalInteractionHandler
+import com.plex.samplecomposeapp.cardsDemo.LocalRootViewItem
 import com.plex.samplecomposeapp.modifierUtils.whenTV
 
 @SuppressLint("ViewConstructor")
@@ -96,9 +98,3 @@ fun toTvKey(keyCode: Int): ControllerKey? = when (keyCode) {
     else -> null
 }
 
-private object NoOpInteractionHandler : InteractionHandler {
-    override fun onAction(action: Action) {}
-}
-
-val LocalRootViewItem = compositionLocalOf { RootViewItem() }
-val LocalInteractionHandler = compositionLocalOf<InteractionHandler> { NoOpInteractionHandler }
